@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+		<title>Your Eyes</title>
+		<link rel="stylesheet" href="style.css" />
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<script
+			type="text/javascript"
+			src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60201c759b8589ff"
+		></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light nav-distance">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">눈 관상 테스트</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a
+								class="nav-link active"
+								aria-current="page"
+								href="https://nalcoding.netlify.app/"
+								>Home</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Features</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Pricing</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+								>Disabled</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="section">
+			<h1 class="title">인공지능 눈 관상 테스트</h1>
+			<h2 class="subtitle">나의 눈은 어떤 상일까요?</h2>
+		</section>
+		<section class="youtube">
+			<div class="container mt-5 youtube-cover d-flex flex-row-reverse">
+				<!-- <img src="image/youtube-copy.jpg" alt="" class="youtube-icon" /> -->
+				<a href="https://comcode.tistory.com/" class="youtube-link">By ComCode Blog</a>
+			</div>
+		</section>
+
+		<script
+			class="jsbin"
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+		></script>
+
+		<div class="container file-upload">
+			<div class="image-upload-wrap" style="width: 65%; margin: 0 auto;">
+				<input
+					class="file-upload-input"
+					type="file"
+					onchange="readURL(this);"
+					accept="image/*"
+				/>
+				<div class="drag-text">
+					<img
+						src="image/upload.svg"
+						class="mt-5 upload"
+						style="width: 20%;p
+						 "
+					/>
+					<h3 class="mb-5 pb-5 pt-5 upload-text">
+						얼굴 찍은 사진을 올려주세요. 얼굴외 사진은 아무값이나 반환합니다.
+					</h3>
+				</div>
+			</div>
+			<div class="file-upload-content">
+				<img class="file-upload-image" id="face-image" src="#" alt="your image" />
+				<div id="loading" class="animated bounce">
+					<div class="spinner-border" role="status">
+						<span class="sr-only"></span>
+					</div>
+					<p class="text-center">AI가 당신의 눈을 분석중입니다.</p>
+				</div>
+				<p class="result-message" style="font-weight: bold; font-size: 1.5rem;"></p>
+				<p class="result-message1" style="font-weight: bold; font-size: 1.1rem;"></p>
+
+				<!-- Go to www.addthis.com/dashboard to customize your tools -->
+				<div class="addthis_inline_share_toolbox"></div>
+
+				<div id="label-container"></div>
+				<div class="image-title-wrap">
+					<button type="button" onclick="removeUpload()" class="remove-image">
+						Remove <span class="image-title">Uploaded Image</span>
+					</button>
+				</div>
+				<!-- <div id="loading"><img id="loading-image" src="image/Loading.gif" alt="Loading..." /></div> -->
+			</div>
+		</div>
+		<div id="webcam-container"></div>
+		<div id="disqus_thread"></div>
+
+		<!-- <script>
+			/**
+			 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+			/*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+			(function () {
+				// DON'T EDIT BELOW THIS LINE
+				var d = document,
+					s = d.createElement('script');
+				s.src = 'https://comchin.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+			})();
+		</script> -->
+		<!-- <noscript
+			>Please enable JavaScript to view the
+			<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript
+		> -->
+		<!-- Optional JavaScript; choose one of the two! -->
+
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+			integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+			integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+			crossorigin="anonymous"
+		></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+		<script>
+			function readURL(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+
+					reader.onload = function (e) {
+						$('.image-upload-wrap').hide();
+						$('#loading').show();
+						$('.file-upload-image').attr('src', e.target.result);
+						$('.file-upload-content').show();
+
+						$('.image-title').html(input.files[0].name);
+					};
+
+					reader.readAsDataURL(input.files[0]);
+					init().then(() => {
+						//console.log('hello');
+						predict();
+						$('#loading').hide();
+					});
+				} else {
+					removeUpload();
+				}
+			}
+
+			function removeUpload() {
+				$('.file-upload-input').replaceWith($('.file-upload-input').clone());
+				$('.file-upload-content').hide();
+				$('.image-upload-wrap').show();
+			}
+			$('.image-upload-wrap').bind('dragover', function () {
+				$('.image-upload-wrap').addClass('image-dropping');
+			});
+			$('.image-upload-wrap').bind('dragleave', function () {
+				$('.image-upload-wrap').removeClass('image-dropping');
+			});
+		</script>
+		<script type="text/javascript">
+			// More API functions here:
+			// https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+			// the link to your model provided by Teachable Machine export panel
+			const URL = 'https://teachablemachine.withgoogle.com/models/sRbD_TiVk/';
+
+			let model, webcam, labelContainer, maxPredictions;
+
+			// Load the image model and setup the webcam
+			async function init() {
+				const modelURL = URL + 'model.json';
+				const metadataURL = URL + 'metadata.json';
+				model = await tmImage.load(modelURL, metadataURL);
+				maxPredictions = model.getTotalClasses();
+				labelContainer = document.getElementById('label-container');
+				for (let i = 0; i < maxPredictions; i++) {
+					// and class labels
+					labelContainer.appendChild(document.createElement('div'));
+				}
+			}
+
+			async function predict() {
+				var image = document.getElementById('face-image');
+				const prediction = await model.predict(image, false);
+				prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+				console.log(prediction[0].className);
+				var resultMessage;
+				var resultcont;
+				switch (prediction[0].className) {
+					case '거북이눈':
+						resultMessage = '거북이 눈';
+						resultcont =
+							'시종향복(始終享福) - 거북이 눈을 지닌 사람은 평생토록 복록을 누릴 것이다. 눈은 맑고 청정하여 마음이 한결같고, 성품 또한 온화하고 지혜로와서 부귀 장수할 것이다. 만약 벼슬길이 열린다면 포부가 커 높은 벼슬까지 오르겠다.' 	
+						break;
+					case '공작눈':
+						resultMessage = '공작 눈';
+						resultcont =
+							'부부화귀(夫婦和貴) - 부부가 화합하고, 귀한 벼슬을 한다. 검은 눈동자가 선명하고 흰 빛은 적은데 전체적으로 눈빛이 청정하고 눈에서 빛나는 기운을 뿜어내는 듯하다. 공작의 눈을 지닌 사람은 정신이 맑으며 위엄이 있고 마음이 청결하여 깨끗한 기운으로 어지러운 세속에 물들지 아니한다';
+						break;					
+					case '봉황눈':
+						resultMessage = '봉황 눈';
+						resultcont =
+							'청고귀현(淸高貴顯) - 피부가 곱고 눈가에 작은 금이 나타나 있다. 이러한 눈을 가진 사람은 청정하고 고귀한 사람이다. 세상에 이름을 날리게 되고 높고 귀한 벼슬을 한다.';
+						break;
+					case '사자눈':
+						resultMessage = '사자 눈';
+						resultcont =
+							'충렬대귀(忠烈大貴) - 충성스럽고 귀하고 높은 벼슬에 오른다. 눈의 생김새는 큼직하며 그 눈에 엄숙한 위엄이 서려 있다. 눈이 빛나고 평범한 사람이 아님을 금방 알 수 있다. 어질고 자비로우며 심성이 곱고 상사를 잘 보필할 수 있으며, 위 아래가 분명하여 사람을 잘 다스리고 공덕이 후세에까지 널리 퍼진다.';
+						break;
+					case '소눈':
+						resultMessage = '소 눈';
+						resultcont =
+							'적저면원(積貯綿遠) - 모으고 저축하여 부귀가 면면히 이어진다. 선량한 눈을 가진 사람을 흔히 소의 눈에 비유한다. 소의 눈은 둥글고 크면서 평평하다. 다만 가까이 보는 것과 멀리 보는 것이 분명하지 못한 것이 단점이랄 수 있지만 바르고 정직하며 선량하다. 소의 가장 큰 특징은 부지런히 일하는 근면성실함이다. 태어나면서부터 근면성실하고 정신이 올바르니 타고난 복록을 오래도록 누리게 될 것이다.';
+						break;
+					case '까치눈':
+						resultMessage = '까치눈';
+						resultcont =
+							'발난부귀(發煖富貴) - 까치의 눈은 눈의 파장과 금이 거듭거듭 중복되어 있고 눈이 길쭉하게 생겼다. 이눈을 가진 사람은 타인을 잘 이용하여 신의를 얻는다. 청소년 시절에 모든 것이 발달되어 만사가 순조로이 흐르게 될 것이나, 인관관계를 조심해야하며 말년에는 명성을 날린다. ';
+						break;
+					case '용눈':
+						resultMessage = '용 눈';
+						resultcont =
+							'관거극품(官居極品) - 벼슬에 오르되 극히 귀한 벼슬을 한다. 용의 눈은 검은 눈동자가 광채를 뿜어내는 것과 같다. 파장은 길며 눈도 크고 충성스런 마음과 어진 성품을 가지고 있다. 높은 기상은 재상자리와 모든 보필자리를 감당할 수 있어서 그 명망이 사후까지 흘러가니 그 복은 자손대대 창성하게 될 것이다.';
+						break;
+					case '학눈':
+						resultMessage = '학 눈';
+						resultcont =
+							'지결소귀(志潔小貴) - 뜻이 고결하고 작은 부귀를 누리는 것이다. 학의 눈동자가 맑고 깨끗하고 선명하여 정신이 맑은 사람이다. 일평생 살아가면서 세속을 벗어나 운산(고결한 구름산)에 뜻을 두고 한 점 부끄럼없는 삶을 살아간다.';
+						break;
+					case '호랑이눈':
+						resultMessage = '호랑이 눈';
+						resultcont =
+							'직장병권(職掌兵權) - 벼슬에 오르되 능수능란하여 병권을 잡게 되는 것이다. 생김새가 크고 황색을 띠고 있다. 이눈은 좋다고만 할 수는 없고 단점도 많이 있다.위엄이 있고 정신력이 뛰어나며 높은 자리에 올라서도 강직한 성품으로 정당하게 일을 처리하면 부귀 영화가 창성할 것이지만 곧은 나무가 바람에 쓰러지는 법, 강직한 성품이 지나쳐서 노년에 자녀 한 사람없이 불행하게 보넬수도 있다.';
+						break;
+					case '돼지눈':
+						resultMessage = '돼지 눈';
+						resultcont =
+							'음천수요(淫賤壽夭) - 음란하고 천하며 수명은 짧을 것이다. 돼지 눈을 비유하자면 붉은 빛과 누런 빛이 어지러이 혼잡 되어 있어서 광명이 노출된 눈이다. 이러한 눈을 지닌 사람은 어리석고 실수가 많으니 퇴보하는 사람이다. 성품은 탐하고 음란하며 남녀를 막론하고 일찍이 요망하게 된다.';
+						break;
+					case '물고기눈':
+						resultMessage = '물고기 눈';
+						resultcont =
+							'우졸수요(愚拙壽夭) - 어리석고 졸렬하고 수명이 짧다. 물고기의 눈과 같이 몽롱하고 힘이 없으며 눈동자를 움직이지 아니하니 정신이 노출되어 있는 것이다. 그 정신이 희미하여 수명도 단축될 것이니 20세가 되어서 浮生(부생)할 것이다. 중병이 들게 되면 눈에 힘이 없어지고 물고기의 눈과 같은 형상을 지니게 되는데 병의 회복을 기대하기 어려울 때 그러하다.';
+						break;
+					case '뱀눈':
+						resultMessage = '뱀 눈';
+						resultcont =
+							'악극조형(惡極遭刑) - 지극히 악날하여 결국 형벌을 받게 된다. 마음엔 뱀과 전갈같은 정신을 가지고 있으니 친척의 인정을 해롭게 하고 아울러 자녀도 다치게 할 것이다. 활시위와 같이 눈 사각이 열려 있는 것이 원문을 짜는 것과 같다 (감옥을 드나드는 것이다)';
+						break;
+					case '쥐 눈':
+						resultMessage = '쥐 눈';
+						resultcont =
+							'절도투해(竊盜妬害) - 쥐의 눈은 검은 자위가 많고 그 빛이 초롱초롱하고 맑다. 늘상 머리를 숙이고 상대를 똑 바로 바라보지 못하고 옆 눈질로 바라보며. 눈동자가 고정되지 않고 이리저리 분주히 움직여 시선을 어디 둘지 몰라 방황하는 눈빛이다. 하는 말도 두서가 없고 거짓말을 밥 먹듯이 하고 질투와 투기가 심하여 친구 사이도 이간질 하여 싸움을 시킨다. 남의 것을 훔처 자신의 것으로 만들어 살기에 항상 마음이 불안하고 일생 쫓끼듯이 산다.';
+						break;
+					default:
+						resultMessage = '알수없음';
+				}
+				var title = '<div>' + resultMessage + '</div>';
+				var cont = resultcont;
+				$('.result-message').html(title);
+				$('.result-message1').html(cont);
+				// $('loading-image').load(function() { $('#loading').hide(); });
+
+				for (let i = 0; i < maxPredictions; i++) {
+					const classPrediction =
+						prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+					labelContainer.childNodes[i].innerHTML = classPrediction;
+				}
+			}
+		</script>
+	</body>
+	
+
+	<!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+</html>
